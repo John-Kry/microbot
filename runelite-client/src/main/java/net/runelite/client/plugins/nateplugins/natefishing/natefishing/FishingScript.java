@@ -25,22 +25,16 @@ public class FishingScript extends Script {
                     return;
                 }
                 if (Inventory.isFull()) {
-                    if (config.Fish().getName().equals("shrimp")) {
-                        Inventory.dropAllStartingFrom(1);
+                    Inventory.dropAllStartingFrom(1);
                         return;
-                    } else {
-                        Inventory.dropAllStartingFrom(5);
-                        return;
-                    }
-
                 } else {
                     for (int fishingSpotId:
                             config.Fish().getFishingSpot() ) {
-                        NPC fishingspot = Rs2Npc.getNpc(fishingSpotId);
+                        NPC fishingspot = Rs2Npc.getNpc(1522);
                         if(fishingspot != null && !Camera.isTileOnScreen(fishingspot.getLocalLocation())){
                             validateInteractable(fishingspot);
                         }
-                        Rs2Npc.interact(fishingSpotId,config.Fish().getAction());
+                        Rs2Npc.interact(fishingspot, config.Fish().getAction());
                         Microbot.status = "Fishing...";
                     }
 
