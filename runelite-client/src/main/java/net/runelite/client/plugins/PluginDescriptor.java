@@ -36,6 +36,7 @@ import java.lang.annotation.Target;
 public @interface PluginDescriptor
 {
 	public String Nate = "<html>[<font color=orange>N</font>] ";
+	public String Jibb = "<html>[<font color=black>N</font>] ";
 	public String Mocrosoft = "<html>[<font color=purple>M</font>] ";
 	public String JR = "<html>[<font color=#54fff9>J</font>] ";
 	public String OG = "<html>[<font color=#FF69B4>O</font>] ";

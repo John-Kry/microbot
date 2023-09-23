@@ -7,6 +7,8 @@ import net.runelite.client.plugins.microbot.Microbot;
 import net.runelite.client.plugins.microbot.util.Global;
 import net.runelite.client.plugins.microbot.util.widget.Rs2Widget;
 
+import static net.runelite.client.plugins.microbot.util.Global.sleepUntil;
+
 public class Rs2Combat {
     /**
      * Sets the attack style
@@ -21,6 +23,7 @@ public class Rs2Combat {
         }
 
         Microbot.getMouse().click(widget.getBounds());
+        sleepUntil(()->isSelected(widget.getId()+1));
         return true;
     }
 
